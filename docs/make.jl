@@ -2,6 +2,8 @@ push!(LOAD_PATH,"../src/")
 
 using HiOscSolver
 using Documenter
+using Plots
+ENV["GKSwstype"] = "100"
 
 makedocs(
     sitename = "HiOscSolver.jl",
