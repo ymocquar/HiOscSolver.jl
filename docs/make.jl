@@ -16,10 +16,11 @@ makedocs(
     modules = [HiOscSolver],
     pages = ["Documentation" => "index.md",
              "Types"         => "types.md",
-             "Functions"     => "functions.md"],
+             "Functions"     => "functions.md",
+             "Tutoriel" => "docfr.md"],
     repo = "https://github.com/ymocquar/HiOscSolver.jl/blob/{commit}{path}#{line}"
 )
 
 deploydocs(;
-    repo="github.com/ymocquar/Uchiyama.jl",
+    repo="github.com/ymocquar/HiOscSolver.jl",
 )

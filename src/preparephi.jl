@@ -1,8 +1,5 @@
 include("expmatrices.jl")
 include("fftbig.jl")
-using LinearAlgebra
-using SparseArrays
-using Statistics
 """
     PreparePhi(n_tau::Integer, epsilon::AbstractFloat, matrix_A::Matrix{Number},
     fct::Function, [matrix_B::Matrix])
@@ -23,20 +20,20 @@ These data can be used elsewhere for example in twoscale function.
 - `t_0=zero(epsilon)` : beginning of the time
 
 # Fields :
-- epsilon : epsilon of the system.
-- n_tau : number of values for fft
-- tau_list : list of values around the unit disk (0 ... n_tau/2 -n_tau/2-1 ... -1 )
-- tau_int : list of values to integrate FFT
-- matrix_Ap : sparse matrix with time dimension
-- tau_Ap : for each angular ``\\tau`` around the unit disk the matrix ``e^{(\\tau \\time Ap)}``
-- tau_Ap_inv : inverse of tau_Ap
-- par_fft : fft parameters
-- fct : function of differential equation
-- paramfct : middle parameter of function fct
-- size_vect : size of vector that is the size of the matrix
-- matrix_B : B matrix for the linear case
-- mode : for optional behavior
-- t_0 : beginning of the time
+- `epsilon` : epsilon of the system.
+- `n_tau` : number of values for fft
+- `tau_list` : list of values around the unit disk (0 ... n_tau/2 -n_tau/2-1 ... -1 )
+- `tau_int` : list of values to integrate FFT
+- `matrix_Ap` : sparse matrix with time dimension
+- `tau_Ap` : for each angular ``\\tau`` around the unit disk the matrix ``e^{(\\tau \\time Ap)}``
+- `tau_Ap_inv` : inverse of tau_Ap
+- `par_fft` : fft parameters
+- `fct` : function of differential equation
+- `paramfct` : middle parameter of function fct
+- `size_vect` : size of vector that is the size of the matrix
+- `matrix_B` : B matrix for the linear case
+- `mode` : for optional behavior
+- `t_0` : beginning of the time
 
 """
 struct PreparePhi
@@ -223,7 +220,7 @@ Preparation of the original data
 - `[newprec]` : precision for the compute, if no given a default value is computed as a function of epsilon
 
 # Fields
-- parphi : phi prepared parameters
+- `parphi` : phi prepared parameters
 - `order` : order of the preparation
 - `ut0` : formated initial data
 - `u0` :initial data
