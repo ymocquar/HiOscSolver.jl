@@ -554,14 +554,11 @@ end
 
 ### Bibliographie
 
-[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, 
-Numer. Math., 129, pp. 211-250, (2015).
+[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, Numer. Math., 129, pp. 211-250, (2015).
 
-[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, 
-submitted. 
+[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, submitted. 
 
-[^3]: N. Crouseilles, M. Lemou, F. Méhats, 
-J. Comput. Phys, 248, pp.287-308, (2013). 
+[^3]: N. Crouseilles, M. Lemou, F. Méhats, J. Comput. Phys, 248, pp.287-308, (2013). 
 
 
 

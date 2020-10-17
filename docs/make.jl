@@ -5,6 +5,7 @@ using Documenter
 
 makedocs(
     sitename = "HiOscSolver.jl",
+    authors="Yves Mocquard",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://ymocquar.github.io/HiOscSolver.jl",
