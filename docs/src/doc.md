@@ -146,13 +146,8 @@ Thus, first of all, we must define the arguments necessary to construct the prob
 - the $A$ matrix 
 -  $\varepsilon \in ]0, 1]$
 
-
-Note: *You have to type ] and ^C by hand, for the rest you can copy and paste*.
-
 ```jl
-]
-add https://gitlab.inria.fr/ua/HiOscSolver.jl.git
-^C
+pkg'add https://gitlab.inria.fr/ua/HiOscSolver.jl.git'
 using HiOscSolver
 A=[0 0 1 0 ; 0 0 0 0 ; -1 0 0 0 ; 0 0 0 0]
 fct = (u,p,t) ->  [ 0, u[4], 2*u[1]*u[2], -u[2] - u[1]^2 + u[2]^2 ] 
