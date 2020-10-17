@@ -1,5 +1,8 @@
 include("expmatrices.jl")
 include("fftbig.jl")
+using LinearAlgebra
+using SparseArrays
+using Statistics
 """
     PreparePhi(n_tau::Integer, epsilon::AbstractFloat, matrix_A::Matrix{Number},
     fct::Function, [matrix_B::Matrix])
