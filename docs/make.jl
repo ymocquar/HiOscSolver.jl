@@ -1,21 +1,22 @@
 push!(LOAD_PATH,"../src/")
 
-using Documenter
 using HiOscSolver
+using Documenter
 
 makedocs(
     sitename = "HiOscSolver.jl",
-    format = Documenter.HTML(),
+    format=Documenter.HTML(;
+        prettyurls=get(ENV, "CI", "false") == "true",
+        canonical="https://ymocquar.github.io/HiOscSolver.jl",
+        assets=String[],
+    ),
     modules = [HiOscSolver],
     pages = ["Documentation" => "index.md",
              "Types"         => "types.md",
              "Functions"     => "functions.md"],
-    repo = "https://github.com/HiOscSolver.jl/blob/{commit}{path}#{line}"
+    repo = "https://github.com/ymocquar/HiOscSolver.jl/blob/{commit}{path}#{line}"
 )
 
-# Documenter can also automatically deploy documentation to gh-pages.
-# See "Hosting Documentation" and deploydocs() in the Documenter manual
-# for more information.
-#=deploydocs(
-    repo = "<repository url>"
-)=#
+deploydocs(;
+    repo="github.com/ymocquar/Uchiyama.jl",
+)
