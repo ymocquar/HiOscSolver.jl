@@ -22,5 +22,7 @@ makedocs(
 )
 
 deploydocs(;
+branch = "gh-pages",
+    devbranch = "main",
     repo="github.com/ymocquar/HiOscSolver.jl",
 )
