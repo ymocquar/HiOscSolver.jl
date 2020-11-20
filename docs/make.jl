@@ -6,11 +6,10 @@ using DocumenterCitations
 using Plots
 ENV["GKSwstype"] = "100"
 
-bib = CitationBibliography(joinpath(@__DIR__, "references.bib")
+bib = CitationBibliography(joinpath(@__DIR__, "references.bib"))
 makedocs(
     bib, 
     sitename = "HiOscSolver.jl",
-    strict = true, 
     authors="Yves Mocquard",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",

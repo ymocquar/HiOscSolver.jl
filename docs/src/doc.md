@@ -551,3 +551,15 @@ Here are the calculations
 From (29) of [COX2002430](@cite), with $c=-i \ell h_n /\varepsilon$, we have
 
 $$\hat{U}_{n+1, \ell} = e^{- i \ell h_n /\varepsilon}\hat{U}_{n, \ell} +  G_{\ell}(u_1) [-4+i \ell h_n /\varepsilon + e^{-i \ell h_n /\varepsilon}(4+3i \ell h_n /\varepsilon+(i \ell h_n /\varepsilon)^2]\\+ (2 G_{\ell}(u_2) + G_{\ell}(u_3) )[-2-i \ell h_n /\varepsilon+e^{-i \ell h_n /\varepsilon}(2-i \ell h_n /\varepsilon)]\\ + G_{\ell}(u_4)[-4+3i \ell h_n /\varepsilon -(i \ell h_n /\varepsilon)^2 + e^{-i \ell h_n /\varepsilon}(4+i \ell h_n /\varepsilon)]/(h_n^2 (i \ell h_n /\varepsilon)^3)$$
+
+
+[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, Numer. Math., 129, pp. 211-250, (2015).
+
+[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, submitted. 
+
+[^3]: N. Crouseilles, M. Lemou, F. Méhats, J. Comput. Phys, 248, pp.287-308, (2013). 
+
+[^4]: S. M. Cox and P. C. Matthews "Exponential Time Differencing for Stiff Systems" J. Comput. Phys, 436, pp.430-455, (2002).
+
+
+
