@@ -2,10 +2,13 @@ push!(LOAD_PATH,"../src/")
 
 using HiOscSolver
 using Documenter
+using DocumenterCitations
 using Plots
 ENV["GKSwstype"] = "100"
 
+bib = CitationBibliography("references.bib")
 makedocs(
+    bib, 
     sitename = "HiOscSolver.jl",
     authors="Yves Mocquard",
     format=Documenter.HTML(;
