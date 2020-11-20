@@ -6,7 +6,7 @@ using DocumenterCitations
 using Plots
 ENV["GKSwstype"] = "100"
 
-bib = CitationBibliography("references.bib")
+bib = CitationBibliography(joinpath(@__DIR__, "references.bib")
 makedocs(
     bib, 
     sitename = "HiOscSolver.jl",
