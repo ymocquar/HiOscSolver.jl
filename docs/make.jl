@@ -10,6 +10,7 @@ bib = CitationBibliography(joinpath(@__DIR__, "references.bib")
 makedocs(
     bib, 
     sitename = "HiOscSolver.jl",
+    strict = true, 
     authors="Yves Mocquard",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
@@ -20,7 +21,8 @@ makedocs(
     pages = ["Documentation" => "index.md",
              "Types"         => "types.md",
              "Functions"     => "functions.md",
-             "Tutoriel" => "docfr.md"],
+             "Tutoriel" => "docfr.md",
+             "References" => "references.md"],
     repo = "https://github.com/ymocquar/HiOscSolver.jl/blob/{commit}{path}#{line}"
 )
 

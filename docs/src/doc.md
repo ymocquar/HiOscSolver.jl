@@ -8,7 +8,7 @@ with
 -  $A\in {\mathcal{M}}_{n,n}(\mathbb{R})$ is such that $\tau \mapsto \exp(\tau A)$ is periodic,  
 -  $f : u\in  \mathbb{R}^n \mapsto \mathbb{R}^n$.
 
-The purpose here is to write an explanatory documentation of the *Julia* package containing the two-scale method (see [^1], [^2] and [^3]). This package is inspired by the Differential Equations package which is considered as one of the best *Julia* packages available.
+The purpose here is to write an explanatory documentation of the *Julia* package containing the two-scale method (see [chartier:2020](@cite), [chartier:hal-00850092](@cite) and [CROUSEILLES2013287](@cite). This package is inspired by the Differential Equations package which is considered as one of the best *Julia* packages available.
 
 
 # Numerical method
@@ -546,21 +546,8 @@ Here are the calculations
 -  $u_{2,\ell} = e^{- i \ell h_n /(2 \varepsilon)}\hat{U}_{n, \ell} + S_0^{h_n /2} ( h_n /2,\ell ) G_{\ell}(u_1)$
 -  $u_{3,\ell} = e^{- i \ell h_n /(2 \varepsilon)}\hat{U}_{n, \ell} + S_0^{h_n /2} ( h_n /2,\ell )  G_{\ell}(u_2)$
 
--  $u_{4,\ell} = e^{- i \ell h_n /(2\varepsilon)}u_{2,\ell} + S_0^{h_n/2} ( h_n/2,\ell )[ 2 G_{\ell}(u_3)-G_{\ell}(u_1)]$ (see (28) of [^4], with $c=-i \ell h_n /\varepsilon$)   
+-  $u_{4,\ell} = e^{- i \ell h_n /(2\varepsilon)}u_{2,\ell} + S_0^{h_n/2} ( h_n/2,\ell )[ 2 G_{\ell}(u_3)-G_{\ell}(u_1)]$ (see (28) of [COX2002430](@cite), with $c=-i \ell h_n /\varepsilon$)   
 
-From (29) of [^4], with $c=-i \ell h_n /\varepsilon$, we have
+From (29) of [COX2002430](@cite), with $c=-i \ell h_n /\varepsilon$, we have
 
 $$\hat{U}_{n+1, \ell} = e^{- i \ell h_n /\varepsilon}\hat{U}_{n, \ell} +  G_{\ell}(u_1) [-4+i \ell h_n /\varepsilon + e^{-i \ell h_n /\varepsilon}(4+3i \ell h_n /\varepsilon+(i \ell h_n /\varepsilon)^2]\\+ (2 G_{\ell}(u_2) + G_{\ell}(u_3) )[-2-i \ell h_n /\varepsilon+e^{-i \ell h_n /\varepsilon}(2-i \ell h_n /\varepsilon)]\\ + G_{\ell}(u_4)[-4+3i \ell h_n /\varepsilon -(i \ell h_n /\varepsilon)^2 + e^{-i \ell h_n /\varepsilon}(4+i \ell h_n /\varepsilon)]/(h_n^2 (i \ell h_n /\varepsilon)^3)$$
-
-
-### Bibliography
-[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, Numer. Math., 129, pp. 211-250, (2015).
-
-[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, submitted. 
-
-[^3]: N. Crouseilles, M. Lemou, F. Méhats, J. Comput. Phys, 248, pp.287-308, (2013). 
-
-[^4]: S. M. Cox and P. C. Matthews "Exponential Time Differencing for Stiff Systems" J. Comput. Phys, 436, pp.430-455, (2002).
-
-
-
