@@ -2,12 +2,13 @@
 
 Documentation for HiOscSolver.jl
 
-# Contents
+## References
+
+```@bibliography
+```
+
+## Contents
 
 ```@contents
 ```
 
-## Index
-
-```@index
-```
