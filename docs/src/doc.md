@@ -12,7 +12,9 @@ The purpose here is to write an explanatory documentation of the *Julia* package
 
 
 # Numerical method
+
 ## Two-scale formulation 
+
 First, rewrite equation (1) using the variable change $w(t)=\exp(-(t-t_{0})A/\varepsilon) u(t)$ to obtain
 
 $$\frac{d w(t)}{dt} = F\Big( \frac{t-t_{0}}{\varepsilon}, w(t) \Big), \;\;\; w(t_{0})=u_{0}, \;\; \varepsilon\in ]0, 1],$$
@@ -25,12 +27,14 @@ We then introduce the function $U(t, \tau), \tau\in [0, 2 \pi]$ such that $U(t, 
 
 $$\frac{\partial U}{\partial t} + \frac{1}{\varepsilon} \frac{\partial U}{\partial \tau} =  F( \tau, U), \;\;\; U(t=t_{0}, \tau)=\Phi(\tau), \;\; \varepsilon\in ]0, 1], \;\;\;\;\;\;\;\;\;\; (2)$$
 
-where $\Phi$ is a function checking $\Phi(\tau=0)=u_{0}$ chosen so that the $U$ solution of (2) is regular (see [^1] and [^2]).
+where $\Phi$ is a function checking $\Phi(\tau=0)=u_{0}$ chosen so that the $U$ solution of (2) is regular (see [chartier2015](@cite) and [chartier2020](@cite).
 
 ## Discretization  
-The numerical method is based on a discretization of equation (2). In the direction $\tau$, a spectral method is used, while for the time $t$, an exponential Adams-Bashforth method allows to build a high order method (see [^2]). The initialization is based on a "butterfly" technique (going back and forth around the initial time).
+
+The numerical method is based on a discretization of equation (2). In the direction $\tau$, a spectral method is used, while for the time $t$, an exponential Adams-Bashforth method allows to build a high order method (see [chartier2020](@cite)). The initialization is based on a "butterfly" technique (going back and forth around the initial time).
 
 ### Initialization 
+
 Let r be the order of the method $AB_r$.\
 Let $\Delta t$ the time step, for $i \in \{r, -(r-1), \ldots, r-1, r\}$,
 we note $u_i = u(t_0+i \Delta t)$.\
@@ -39,6 +43,7 @@ If $u_{k}$ is known with a precision of ${\mathcal O}(\Delta t^{r'+1})$, and for
 Similarly, if $u_{k}$ is known with a precision of ${\mathcal O}(\Delta t^{r'+1})$, and for $r' \geq 2, u_{k+1}, \ldots, u_{k+r'-1}$ are known with a precision of ${\mathcal O}(\Delta t^{r'})$ then we can calculate $u_{k-1}$ with a precision of ${\mathcal O}(\Delta t^{r'+1})$ with the method $AB_{r'}$.
 
 ### Algorithm
+
 - With the method $AB_1$, from $u_0$ we calculate $u_{-1}$ with a precision of ${\mathcal O}(\Delta t^2)$
 - With the method $AB_2$, starting from $u_{0}$ and $u_{-1}$, we calculate $u_{1}$ with a precision of ${\mathcal O}(\Delta t^3)$
 - For $r' = $3 to $r' = r$.
@@ -305,7 +310,6 @@ plot(sol)
 
 ![](img/henon_heiles.png)
 
-
 ## Charged particle
 
 A system of charged particles under the effect of an external electro-magnetic field is considered to be 
@@ -324,7 +328,7 @@ We will assume that the magnetic field is written $B(t, x)=(0, 0, 1)^T$ and unde
 $$\begin{aligned}
 \frac{d x_1(t) }{dt} &= \frac{1}{\varepsilon}v_1(t) \\
 \frac{d x_2(t) }{dt} &= \frac{1}{\varepsilon} v_2(t) \\
-\frac{d x_3(t) }{dt}&= v_3(t) \\
+\frac{d x_3(t) }{dt} &= v_3(t) \\
 \frac{d v_1(t) }{dt} &= E_1(t, x(t)) + \frac{1}{\varepsilon}v_2(t)\\
 \frac{d v_2(t) }{dt} &= E_2(t, x(t)) - \frac{1}{\varepsilon}v_1(t)\\
 \frac{d v_3(t) }{dt} &= E_3(t, x(t)) 
@@ -551,15 +555,3 @@ Here are the calculations
 From (29) of [cox2002](@cite), with $c=-i \ell h_n /\varepsilon$, we have
 
 $$\hat{U}_{n+1, \ell} = e^{- i \ell h_n /\varepsilon}\hat{U}_{n, \ell} +  G_{\ell}(u_1) [-4+i \ell h_n /\varepsilon + e^{-i \ell h_n /\varepsilon}(4+3i \ell h_n /\varepsilon+(i \ell h_n /\varepsilon)^2]\\+ (2 G_{\ell}(u_2) + G_{\ell}(u_3) )[-2-i \ell h_n /\varepsilon+e^{-i \ell h_n /\varepsilon}(2-i \ell h_n /\varepsilon)]\\ + G_{\ell}(u_4)[-4+3i \ell h_n /\varepsilon -(i \ell h_n /\varepsilon)^2 + e^{-i \ell h_n /\varepsilon}(4+i \ell h_n /\varepsilon)]/(h_n^2 (i \ell h_n /\varepsilon)^3)$$
-
-
-[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, Numer. Math., 129, pp. 211-250, (2015).
-
-[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, submitted. 
-
-[^3]: N. Crouseilles, M. Lemou, F. Méhats, J. Comput. Phys, 248, pp.287-308, (2013). 
-
-[^4]: S. M. Cox and P. C. Matthews "Exponential Time Differencing for Stiff Systems" J. Comput. Phys, 436, pp.430-455, (2002).
-
-
-
