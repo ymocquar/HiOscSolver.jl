@@ -19,9 +19,10 @@ makedocs(
     ),
     modules = [HiOscSolver],
     pages = ["Documentation" => "index.md",
+             "Tutorial"      => "doc.md",
+             "Tutoriel"      => "docfr.md",
              "Types"         => "types.md",
-             "Functions"     => "functions.md",
-             "Tutoriel" => "docfr.md"],
+             "Functions"     => "functions.md"],
     repo = "https://github.com/ymocquar/HiOscSolver.jl/blob/{commit}{path}#{line}"
 )
 

@@ -12,7 +12,7 @@ avec
 -  $A\in \mathcal{M}_{n,n}(\mathbb{R})\text{ est telle que }\tau \mapsto \exp(\tau A)$ est périodique,  
 -  $f : u\in  \mathbb{R}^n \mapsto \mathbb{R}^n$.
 
-Il s'agit ici d'écrire une documentation explicative du package *Julia* contenant la méthode double-échelle (voir [^1], [^2] et [^3]). Ce package s'inspire du package Differential Equations  qui est considéré comme un des meilleurs packages *Julia* existant. 
+Il s'agit ici d'écrire une documentation explicative du package *Julia* contenant la méthode double-échelle (voir [chartier2015](@cite), [chartier2020](@cite) et [crouseilles2013](@cite). Ce package s'inspire du package Differential Equations  qui est considéré comme un des meilleurs packages *Julia* existant. 
 
 ## Méthode numérique
 
@@ -37,11 +37,11 @@ On introduit alors la fonction $U(t, \tau), \tau\in [0, 2\pi]$ telle que $U(t, \
 %\label{eq_tau}
 ```
 
-où $\Phi$ est une fonction vérifiant $\Phi(\tau=0)=u_{0}$ choisie de sorte que la solution $U$ de (2) est régulière (voir [^1] et [^2]). 
+où $\Phi$ est une fonction vérifiant $\Phi(\tau=0)=u_{0}$ choisie de sorte que la solution $U$ de (2) est régulière (voir [chartier2015](@cite) et [chartier2020](@cite)). 
 
 ### Discrétisation 
 
-La méthode numérique est basée sur une discrétisation de l'équation (2). Dans la direction $\tau$, une méthode spectrale est utilisée alors que pour le temps $t$, une méthode de type exponentielle Adams-Bashforth permet de construire une méthode d'ordre élevé (voir [^2]). L'initialisation repose sur une technique "butterfly" (aller-retour autour du temps initial). 
+La méthode numérique est basée sur une discrétisation de l'équation (2). Dans la direction $\tau$, une méthode spectrale est utilisée alors que pour le temps $t$, une méthode de type exponentielle Adams-Bashforth permet de construire une méthode d'ordre élevé (voir [chartier2020](@cite)). L'initialisation repose sur une technique "butterfly" (aller-retour autour du temps initial). 
 
 ### Initialisation 
 
@@ -551,15 +551,3 @@ function getexactsol(par::PreparePhi, u0, t)
 end
 
 ```
-
-### Bibliographie
-
-[^1]: P. Chartier, N. Crouseilles, M. Lemou, F. Méhats, Numer. Math., 129, pp. 211-250, (2015).
-
-[^2]: P. Chartier, M. Lemou, F. Méhats, X. Zhao, submitted. 
-
-[^3]: N. Crouseilles, M. Lemou, F. Méhats, J. Comput. Phys, 248, pp.287-308, (2013). 
-
-
-
-
