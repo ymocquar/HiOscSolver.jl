@@ -7,8 +7,7 @@ Documentation for HiOscSolver.jl
 ```@bibliography
 ```
 
-## Contents
+## Index
 
-```@contents
+```@index
 ```
-
