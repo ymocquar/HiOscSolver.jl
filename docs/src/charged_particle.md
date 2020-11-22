@@ -1,4 +1,4 @@
-# Charged particle
+# Charged particle Example
 
 A system of charged particles under the effect of an external electro-magnetic field is considered to be 
 $(E(t, x), B(t, x))\in \mathbb{R}^6$.\
@@ -62,22 +62,31 @@ $$E(t, x) =
 \end{array}
 \right)$$
 
-```jl
+```@setup 12
 using HiOscSolver
-A = [0 0 0 1 0 0; 0 0 0 0 1 0;0 0 0 0 0 0; 0 0 0 0 1 0; 0 0 0 -1 0 0; 0 0 0 0 0 0]
+using Plots
+```
+
+```@example 12
+A = [0 0 0  1 0 0; 
+     0 0 0  0 1 0;
+     0 0 0  0 0 0; 
+     0 0 0  0 1 0; 
+     0 0 0 -1 0 0; 
+     0 0 0  0 0 0]
+
 function fparticle(u, p, t)
     s1, c1 = sincos(u[1]/2)
     s2, c2 = sincos(u[2])
     s3, c3 = sincos(u[3])
     return [0, 0, u[6], c1*s2*s3/2, s1*c2*s3, s1*s2*c3]
 end
-epsilon= 0.05
-t_min=0.0
-t_max=1.0
+
+epsilon = 0.05
+t_min = 0.0
+t_max = 1.0
 u0 = [1.0, 1.5, -0.5, 0, -1.2, 0.8]
 prob = HiOscODEProblem(fparticle, u0, (t_min,t_max), missing, A, epsilon)
-sol=solve(prob)
+sol = solve(prob)
 plot(sol)
 ```
-![](img/particle.png)
-

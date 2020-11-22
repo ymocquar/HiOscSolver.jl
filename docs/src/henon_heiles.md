@@ -26,19 +26,25 @@ u_4\\
 
 one chooses for example, $\varepsilon=0.001$
 and $u_0 = (0.12, 0.12, 0.12, 0.12)$
-```jl
+
+```@setup 11
 using HiOscSolver
-A=[0 0 1 0 ; 0 0 0 0 ; -1 0 0 0 ; 0 0 0 0]
+using Plots
+```
+
+```@example 11
+A = [0 0 1 0 ; 
+     0 0 0 0 ; 
+    -1 0 0 0 ; 
+     0 0 0 0 ]
+
 fct = (u,p,t) ->  [ 0, u[4], 2*u[1]*u[2], -u[2] - u[1]^2 + u[2]^2 ] 
+
 epsilon= 0.001
 t_min=0.0
 t_max=1.0
 u0 = [0.12, 0.12, 0.12, 0.12]
 prob = HiOscODEProblem(fct, u0, (t_min,t_max), missing, A, epsilon)
 sol = solve(prob);
-using Plots
 plot(sol)
 ```
-
-![](img/henon_heiles.png)
-

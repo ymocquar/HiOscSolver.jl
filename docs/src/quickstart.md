@@ -29,7 +29,7 @@ t_min=0.0
 t_max=3.0
 
 u0 = [0.55, 0.12, 0.03, 0.89]
-prob = HiOscODEProblem(fct, u0, (t_min,t_max), missing, A, epsilon) 
+prob = HiOscODEProblem(fct, u0, (t_min,t_max), missing, A, epsilon); 
 ```
 
 From the ```prob``` problem, we can now switch to its digital resolution. 
@@ -98,13 +98,6 @@ using Plots
 plot(sol) 
 ```
 
-If you want to save the result in a file (pdf or png) here are the commands
-```jl     
-using Plots
-p = plot(sol)
-savefig(p,"out/plot.png")
-```
-
 ## Linear non-homogeneous case 
 
 The following non-homogeneous linear system is considered to be satisfied by $u(t)=(u_1, u_2, u_3, u_4)(t)$
@@ -130,10 +123,13 @@ B\in {\mathcal M}_{4, 4}(\mathbb{R}), \alpha, \beta \in \mathbb{R}^4,$$
 We wish to obtain a high precision, so we will use BigFloat real numbers, they are encoded on 256 bits by default which gives a precision bound of about $2^{-256}. \approx 10^{-77}$.\
 At the end, we compare a calculated result with an exact result.
 
-```@example 2
+```@setup 2
 using HiOscSolver
 using Plots
 using Random
+```
+
+```@example 2
 
 rng = MersenneTwister(1111)
 
