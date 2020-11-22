@@ -90,3 +90,8 @@ prob = HiOscODEProblem(fparticle, u0, (t_min,t_max), missing, A, epsilon)
 sol = solve(prob)
 plot(sol)
 ```
+
+
+```@example 12
+plot(sol,vars=(1,2,3))
+```
