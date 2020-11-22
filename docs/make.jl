@@ -18,10 +18,14 @@ makedocs(
         assets=String[],
     ),
     modules = [HiOscSolver],
-    pages = ["Documentation"    => "index.md",
-             "Numerical Method" => "doc.md",
-             "Types"            => "types.md",
-             "Functions"        => "functions.md"],
+    pages = ["Documentation"     => "index.md",
+             "Numerical Method"  => "numerical_method.md",
+             "Quickstart"        => "quickstart.md",
+             "Charged Particled" => "charged_particle.md",
+             "Henon-Heiles"      => "henon_heiles.md",
+             "Future work"       => "future_work.md",
+             "Types"             => "types.md",
+             "Functions"         => "functions.md"],
     repo = "https://github.com/ymocquar/HiOscSolver.jl/blob/{commit}{path}#{line}"
 )
 
