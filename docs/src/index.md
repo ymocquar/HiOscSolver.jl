@@ -10,7 +10,7 @@ with
 -  $A\in {\mathcal{M}}_{n,n}(\mathbb{R})$ is such that $\tau \mapsto \exp(\tau A)$ is periodic,  
 -  $f : u\in  \mathbb{R}^n \mapsto \mathbb{R}^n$.
 
-The purpose here is to write an explanatory documentation of the *Julia* package containing the two-scale method (see [chartier2020](@cite), [chartier2015](@cite) and [crouseilles2013](@cite). This package is inspired by the Differential Equations package which is considered as one of the best *Julia* packages available.
+The purpose here is to write an explanatory documentation of the *Julia* package containing the two-scale method (see [chartier2020](@cite), [chartier2015](@cite) and [crouseilles2013](@cite). This package is inspired by the Differential Equations package [SciML](https://diffeq.sciml.ai/dev/index.html).
 
 
 ## References

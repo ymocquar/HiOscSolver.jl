@@ -36,7 +36,7 @@ Similarly, if $u_{k}$ is known with a precision of ${\mathcal O}(\Delta t^{r'+1}
 - With the method $AB_2$, starting from $u_{0}$ and $u_{-1}$, we calculate $u_{1}$ with a precision of ${\mathcal O}(\Delta t^3)$
 - For $r' = $3 to $r' = r$.
     - For $k=1$ to $k=r'-1$
-        - With the method $AB_{r'-1}$, from $u_{1-k}, u_{2-k}, \ldots,u_{r'-1-k}$, we calculate $u_{-k}$ with a precision of ${\cal O}(\Delta t^{r'})$
+        - With the method $AB_{r'-1}$, from $u_{1-k}, u_{2-k}, \ldots,u_{r'-1-k}$, we calculate $u_{-k}$ with a precision of ${\mathcal O}(\Delta t^{r'})$
     - For $k=1$ to $k=r'-1$
          - With the method $AB_{r'}$, from $u_{k-1}, u_{k-2}, \ldots,u_{k-r'}$, we calculate $u_{k}$ with a precision of ${\mathcal O}(\Delta t^{r'+1})$
 
