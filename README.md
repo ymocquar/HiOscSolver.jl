@@ -7,3 +7,4 @@
 [![Build Status](https://github.com/ymocquar/HiOscSolver.jl/workflows/CI/badge.svg)](https://github.com/ymocquar/HiOscSolver.jl/actions)
 [![Coverage](https://codecov.io/gh/ymocquar/HiOscSolver.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/ymocquar/HiOscSolver.jl)
 
+[INRIA](https://www.inria.fr/en) provides funding for this project.
