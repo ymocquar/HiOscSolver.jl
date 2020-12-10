@@ -19,7 +19,7 @@ where $\Phi$ is a function checking $\Phi(\tau=0)=u_{0}$ chosen so that the $U$ 
 
 ## Discretization  
 
-The numerical method is based on a discretization of equation (2). In the direction $\tau$, a spectral method is used, while for the time $t$, an exponential Adams-Bashforth method allows to build a high order method (see [chartier2020](@cite)). The initialization is based on a "butterfly" technique (going back and forth around the initial time).
+The numerical method is based on a suitable time discretization of equation (2). In the direction $\tau$, a spectral method is used, while for the time $t$, an exponential Adams-Bashforth method allows to build a high order method (see [chartier2020](@cite)). The suitable choice of the initial condition is required to ensure high order accuracy. From a numerical point of view, a "butterfly" technique is introduced here (going back and forth around the initial time).
 
 ### Initialization 
 
